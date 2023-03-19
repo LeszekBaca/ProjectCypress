@@ -1,1 +1,6 @@
-{}
+{
+  "baseUrl": "https://alan-systems.com/pl",
+  "chromeWebSecurity": true,
+  "viewportHeight": 1080,
+  "viewportWidth": 1920
+}
