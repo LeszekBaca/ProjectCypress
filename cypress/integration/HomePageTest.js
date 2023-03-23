@@ -1,5 +1,6 @@
 ///<reference types = "cypress" />
 
+// To DO:
 describe("E2E - Home Page", () => {
   it("Should open home page and check pusbutton on page - automation practice", () => {
     cy.visit("/").then(() =>

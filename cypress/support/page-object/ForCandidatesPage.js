@@ -1,4 +1,4 @@
-class ForCandidates {
+class ForCandidatesPage {
   visitOnMainPage() {
     return cy
       .visit("/dla-kandydatow/")
