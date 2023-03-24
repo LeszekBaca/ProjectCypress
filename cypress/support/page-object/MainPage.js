@@ -1,4 +1,5 @@
 class MainPage {
+  //TO DO
   get findOutMorePushButton() {
     return cy.get(
       'a[class="btn secondary text-uppercase big"][href="/dla-biznesu/"]'

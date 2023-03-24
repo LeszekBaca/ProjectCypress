@@ -1,4 +1,5 @@
 class ForBusinessPage {
+  //TO DO
   visitOnMainPage() {
     return cy
       .visit("/dla-biznesu/")
