@@ -1,15 +1,20 @@
 class MainPage {
-  //TO DO
-  get findOutMorePushButton() {
+  getFindOutMorePushButton() {
     return cy.get(
       'a[class="btn secondary text-uppercase big"][href="/dla-biznesu/"]'
     );
   }
 
-  get jumpOnBoardPushButton() {
+  getJumpOnBoardPushButton() {
     return cy.get(
       'a[class="btn secondary text-uppercase big"][href="/dla-kandydatow/"]'
     );
+  }
+
+  visitMainPageAndPrintToConsoleLog() {
+    return cy
+      .visit("/")
+      .then(() => console.log("Visit on https://alan-systems.com/pl/"));
   }
 
   findOutMorePushButtonText() {
@@ -24,14 +29,8 @@ class MainPage {
     return "https://alan-systems.com/pl/dla-biznesu/";
   }
 
-  forCandidates() {
+  forCandidatesUrl() {
     return "https://alan-systems.com/pl/dla-kandydatow/";
-  }
-
-  visitOnMainPage() {
-    return cy
-      .visit("/")
-      .then(() => console.log("Visit on https://alan-systems.com/pl/"));
   }
 }
 

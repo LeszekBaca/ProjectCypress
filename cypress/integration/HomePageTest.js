@@ -1,25 +1,25 @@
 ///<reference types = "cypress" />
 
-// To DO:
+import MainPage from "../support/page-object/MainPage";
+
 describe("E2E - Home Page", () => {
-    it("Should open home page and check pusbutton on page - automation practice", () => {
-        cy.visit("/").then(() =>
-            console.log("Visit on https://alan-systems.com/pl/"));
+  it("Should open home page and check pusbutton on page - automation practice", () => {
+    MainPage.visitMainPageAndPrintToConsoleLog();
 
-        cy.get('a[class="btn secondary text-uppercase big"][href="/dla-biznesu/"]')
-        .should("contain", "DOWIEDZ SIĘ WIĘCEJ")
-        .click();
+    MainPage.getFindOutMorePushButton()
+      .should("contain", MainPage.findOutMorePushButtonText())
+      .click();
 
-        cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu/");
-        cy.visit("/").then(() =>
-            console.log("Visit on https://alan-systems.com/pl/"));
-        cy.get(
-            'a[class="btn secondary text-uppercase big"][href="/dla-kandydatow/"]')
-        .should("contain", "WSKAKUJ NA POKŁAD")
-        .click();
-        cy.url().should("eq", "https://alan-systems.com/pl/dla-kandydatow/");
+    cy.url().should("eq", MainPage.forBusinessUrl());
 
-        cy.visit("/").then(() =>
-            console.log("Visit on https://alan-systems.com/pl/"));
-    });
+    MainPage.visitMainPageAndPrintToConsoleLog();
+
+    MainPage.getJumpOnBoardPushButton()
+      .should("contain", MainPage.jumpOnBoardPushButtonText())
+      .click();
+
+    cy.url().should("eq", MainPage.forCandidatesUrl());
+
+    MainPage.visitMainPageAndPrintToConsoleLog();
+  });
 });
