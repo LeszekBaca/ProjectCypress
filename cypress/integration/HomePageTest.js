@@ -3,7 +3,7 @@
 import MainPage from "../support/page-object/MainPage";
 
 describe("E2E - Home Page", () => {
-  it("Should open home page and check pusbutton on page - automation practice", () => {
+  it("Should open home page and check pusbutton on page", () => {
     MainPage.visitMainPageAndPrintToConsoleLog();
 
     MainPage.getFindOutMorePushButton()
