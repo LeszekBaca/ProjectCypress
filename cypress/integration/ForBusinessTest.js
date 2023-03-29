@@ -1,12 +1,15 @@
 ///<reference types = "cypress" />
 
-// To DO:
+import ForBusinessPage from "../support/page-object/ForBusinessPage";
+
 describe("E2E - For Business Page", () => {
-  it("Should open 'For Business page' and check pusbutton on page - automation practice", () => {
+  it("Should open 'For Business page' and check pusbutton on page", () => {
     // 1
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
+
+    ForBusinessPage.visitOnMainPage();
 
     cy.wait(2000);
     //0
@@ -21,9 +24,11 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
+
+    ForBusinessPage.visitOnMainPage();
 
     //1
     cy.get("#menu-item-286")
@@ -37,9 +42,10 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-o-nas/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
 
     // 2
     cy.get("#menu-item-331")
@@ -52,9 +58,11 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-oferta/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
 
     //3
     cy.get("#menu-item-285")
@@ -67,9 +75,11 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-kontakt/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
 
     //4
     cy.get("#menu-item-287")
@@ -82,9 +92,11 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-kandydatow/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
 
     //5
     cy.get("h3")
@@ -98,9 +110,11 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-oferta/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
 
     //6
     cy.get(
@@ -112,9 +126,11 @@ describe("E2E - For Business Page", () => {
     //cy.wait(2000);
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-o-nas/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
     //7
 
     cy.wait(2000);
@@ -127,9 +143,11 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
 
     //menu-item-290
     //<a href="https://alan-systems.com/pl/dla-biznesu/" class="nav-link active">Dla biznesu</a>
@@ -148,9 +166,12 @@ describe("E2E - For Business Page", () => {
     //cy.wait(2000);
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
+
     //2
 
     cy.wait(2000);
@@ -167,9 +188,11 @@ describe("E2E - For Business Page", () => {
     //cy.wait(2000);
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-o-nas/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
 
     //3
     cy.wait(2000);
@@ -185,9 +208,11 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-oferta/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
     //4
 
     cy.wait(2000);
@@ -203,9 +228,11 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-kontakt/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
     //5
 
     cy.wait(2000);
@@ -221,78 +248,103 @@ describe("E2E - For Business Page", () => {
 
     cy.url().should("eq", "https://alan-systems.com/pl/dla-kandydatow/");
 
-    cy.visit("/dla-biznesu/").then(() =>
-      console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    );
+    ForBusinessPage.visitOnMainPage();
+
+    // cy.visit("/dla-biznesu/").then(() =>
+    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
+    // );
   });
 
   it("check scrolling list", () => {
+    ForBusinessPage.visitOnMainPage();
+
     for (let i = 0; i < 5; i++) {
       //cy.wait("1000");
       switch (i) {
         case 0: {
           cy.wait(1000);
-          cy.get('div[class="img"]')
+          cy.get('div[class="col-12"]')
+            .find('div[class="img"]')
             .children(
               'img[src="https://alan-systems.com/shared/uploads/clients/tele2.png"]'
             )
-            .last()
-            //.should("contain", "Kariera w ALAN Systems")
             .click({
               force: true,
             });
+
+          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
+            .find('div[class="mt-3 small"]')
+            .should(
+              "contain",
+              "Hans Gruber, Head of Application Management, Tele2,"
+            );
           break;
         }
         case 1: {
           cy.wait(1000);
-          cy.get('div[class="img"]')
+          cy.get('div[class="col-12"]')
+            .find('div[class="img"]')
             .children(
               'img[src="https://alan-systems.com/shared/uploads/clients/gvc-logo.png"]'
             )
-            .last()
-            //.should("contain", "Kariera w ALAN Systems")
             .click({
               force: true,
             });
+
+          cy.wait(1000);
+          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
+            .find('div[class="mt-3 small"]')
+            .should("contain", "Robert Wilfingseder, Procurement Manager");
           break;
         }
         case 2: {
           cy.wait(1000);
-          cy.get('div[class="img"]')
+          cy.get('div[class="col-12"]')
+            .find('div[class="img"]')
             .children(
               'img[src="https://alan-systems.com/shared/uploads/clients/cbg-white.png"]'
             )
-            .last()
-            //.should("contain", "Kariera w ALAN Systems")
             .click({
               force: true,
             });
+
+          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
+            .find('div[class="mt-3 small"]')
+            .should("contain", "Urszula Lorente, Pełnomocnik Spółki");
+
           break;
         }
         case 3: {
           cy.wait(1000);
-          cy.get('div[class="img"]')
+          cy.get('div[class="col-12"]')
+            .find('div[class="img"]')
             .children(
               'img[src="https://alan-systems.com/shared/uploads/clients/i2.png"]'
             )
-            .last()
-            //.should("contain", "Kariera w ALAN Systems")
             .click({
               force: true,
             });
+
+          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
+            .find('div[class="mt-3 small"]')
+            .should("contain", "Natalia Szwed, v-ce Dyrektor");
+
           break;
         }
         case 4: {
           cy.wait(1000);
-          cy.get('div[class="img"]')
+          cy.get('div[class="col-12"]')
+            .find('div[class="img"]')
             .children(
               'img[src="https://alan-systems.com/shared/uploads/clients/gfk-color.png"]'
             )
-            .last()
-            //.should("contain", "Kariera w ALAN Systems")
             .click({
               force: true,
             });
+
+          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
+            .find('div[class="mt-3 small"]')
+            .should("contain", "Monika Macura, Senior HR Specialist");
           break;
         }
       }
