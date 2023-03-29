@@ -70,7 +70,7 @@ class ForCandidatesPage {
   }
 
   forCandidatesText() {
-    return "For the candidate";
+    return "Dla kandydata";
   }
 
   aboutUsText() {
@@ -95,6 +95,88 @@ class ForCandidatesPage {
 
   soundsGoodPushButtonText() {
     return "Brzmi nieźle, wchodzę w to!";
+  }
+
+  forCandidatesUrl() {
+    return "https://alan-systems.com/pl/dla-kandydatow/";
+  }
+
+  aboutUsUrl() {
+    return "https://alan-systems.com/pl/dla-kandydatow-o-nas/";
+  }
+
+  carrierUrl() {
+    return "https://alan-systems.com/pl/dla-kandydatow-kariera/";
+  }
+
+  contactUrl() {
+    return "https://alan-systems.com/pl/dla-kandydatow-kontakt/";
+  }
+
+  soundsGoodPushButtonUrl() {
+    return "https://alan-systems.com/pl/dla-kandydatow-kariera/";
+  }
+
+  solutionsForBusinessUrl() {
+    return "https://alan-systems.com/pl/dla-biznesu/";
+  }
+
+  findOfferForYourselfPushbuttonUrl() {
+    return "https://alan-systems.com/pl/dla-kandydatow-kariera/";
+  }
+
+  getForCandidatesFromFooter() {
+    return cy.get(
+      'a[class="nav-link active"][href="https://alan-systems.com/pl/dla-kandydatow/"]'
+    );
+  }
+
+  getAboutUsFromFooter() {
+    return cy.get(
+      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-28"]'
+    );
+  }
+
+  aboutUsFromFooterAll() {
+    return this.getAboutUsFromFooter().children(
+      'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow-o-nas/"]'
+    );
+  }
+
+  getCarrierFromFooter() {
+    return cy.get(
+      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-27"]'
+    );
+  }
+
+  carrierFromFooterAll() {
+    return this.getCarrierFromFooter().children(
+      'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow-kariera/"]'
+    );
+  }
+
+  getContactFromFooter() {
+    return cy.get(
+      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-26"]'
+    );
+  }
+
+  contactFromFooterAll() {
+    return this.getContactFromFooter().children(
+      'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow-kontakt/"]'
+    );
+  }
+
+  getSolutionsForFooter() {
+    return cy.get(
+      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-29"]'
+    );
+  }
+
+  solutionsForFooterAll() {
+    return this.getSolutionsForFooter().children(
+      'a[class="nav-link "][href="https://alan-systems.com/pl/dla-biznesu/"]'
+    );
   }
 
   visitForCandidatesAndPrintToConsoleLog() {

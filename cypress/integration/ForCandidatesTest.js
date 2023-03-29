@@ -5,252 +5,111 @@ import ForCandidatesPage from "../support/page-object/ForCandidatesPage";
 // To DO:
 describe("E2E - For Candidates Page", () => {
   it("Should open 'For candidate' page and check pusbutton on page", () => {
-    // 1
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
     //0
     cy.wait(2000);
-    // cy.get("#menu-item-291")
-    //   .children(
-    //     'a[href="https://alan-systems.com/pl/dla-kandydatow/"][class="nav-link active"]'
-    //   )
     ForCandidatesPage.forCandidatesFromMenuAll()
-      .should("contain", "Dla kandydata")
+      .should("contain", ForCandidatesPage.forCandidatesText())
       .click({
         force: true,
       });
-
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-kandydatow/");
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
-
+    cy.url().should("eq", ForCandidatesPage.forCandidatesUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
 
     //1
     cy.wait(2000);
-    // cy.get("#menu-item-28")
-    //   .children(
-    //     'a[href="https://alan-systems.com/pl/dla-kandydatow-o-nas/"][class="nav-link "]'
-    //   )
-    ForCandidatesPage.aboutUsFromMenuAll().should("contain", "O nas").click({
-      force: true,
-    });
-
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-kandydatow-o-nas/");
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
-
+    ForCandidatesPage.aboutUsFromMenuAll()
+      .should("contain", ForCandidatesPage.aboutUsText())
+      .click({
+        force: true,
+      });
+    cy.url().should("eq", ForCandidatesPage.aboutUsUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
 
     // 2
-    // cy.get("#menu-item-27")
-    //   .children(
-    //     'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow-kariera/"]'
-    //   )
-    //.first()
-    ForCandidatesPage.carrierFromMenuAll().should("contain", "Kariera").click();
-
-    cy.url().should(
-      "eq",
-      "https://alan-systems.com/pl/dla-kandydatow-kariera/"
-    );
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
-
+    ForCandidatesPage.carrierFromMenuAll()
+      .should("contain", ForCandidatesPage.carrierText())
+      .click();
+    cy.url().should("eq", ForCandidatesPage.carrierUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
 
     //3
-    // cy.get("#menu-item-26")
-    //   .children(
-    //     'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow-kontakt/"]'
-    //   )
-    //.first()
-    ForCandidatesPage.contactFromMenuAll().should("contain", "Kontakt").click();
-
-    cy.url().should(
-      "eq",
-      "https://alan-systems.com/pl/dla-kandydatow-kontakt/"
-    );
-
+    ForCandidatesPage.contactFromMenuAll()
+      .should("contain", ForCandidatesPage.contactText())
+      .click();
+    cy.url().should("eq", ForCandidatesPage.contactUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
 
     //4
-    // cy.get("#menu-item-29")
-    //   .children(
-    //     'a[class="nav-link "][href="https://alan-systems.com/pl/dla-biznesu/"]'
-    //   )
-    //.first()
     ForCandidatesPage.solutionsForBusinessAll()
-      .should("contain", "Rozwiązania do biznesu")
+      .should("contain", ForCandidatesPage.solutionsForBusinessText())
       .click();
-
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu/");
-
+    cy.url().should("eq", ForCandidatesPage.solutionsForBusinessUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
 
     //5
-    // cy.get("h3")
-    //   .children(
-    //     'a[class="btn secondary text-uppercase big"][href="https://alan-systems.com/dla-kandydatow-kariera/"]'
-    //   )
-    //.first()
     ForCandidatesPage.findOfferForYourselfPushbuttonAll()
-      .should("contain", "Znajdź ofertę dla siebie ")
+      .should("contain", ForCandidatesPage.findOfferForYourselfPushbuttonText())
       .click({ force: true });
-
     cy.url().should(
       "eq",
-      "https://alan-systems.com/pl/dla-kandydatow-kariera/"
+      ForCandidatesPage.findOfferForYourselfPushbuttonUrl()
     );
-
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
 
     //6
-    // cy.get('div[class="mx-auto w-mobile-100"]')
-    //   .children(
-    //     'a[class="btn primary text-uppercase my-4"][href="https://alan-systems.com/dla-kandydatow-kariera/"]'
-    //   )
-    //.first()
     ForCandidatesPage.soundsGoodPushButtonAll()
-      .should("contain", "Brzmi nieźle, wchodzę w to!")
+      .should("contain", ForCandidatesPage.soundsGoodPushButtonText())
       .click({ force: true });
-    //cy.wait(2000);
-    cy.url().should(
-      "eq",
-      "https://alan-systems.com/pl/dla-kandydatow-kariera/"
-    );
-
+    cy.url().should("eq", ForCandidatesPage.soundsGoodPushButtonUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
   });
 
   it("check menu (footer)", () => {
     //1
     cy.wait(2000);
-    cy.get(
-      'a[class="nav-link active"][href="https://alan-systems.com/pl/dla-kandydatow/"]'
-    )
+    ForCandidatesPage.getForCandidatesFromFooter()
       .last()
-      .should("contain", "Dla kandydata")
+      .should("contain", ForCandidatesPage.forCandidatesText())
       .click();
-
-    //cy.wait(2000);
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-kandydatow/");
-
+    cy.url().should("eq", ForCandidatesPage.forCandidatesUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
 
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
     //2
-
     cy.wait(2000);
-    cy.get(
-      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-28"]'
-    )
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow-o-nas/"]'
-      )
+    ForCandidatesPage.aboutUsFromFooterAll()
       .last()
-      .should("contain", "O nas")
+      .should("contain", ForCandidatesPage.aboutUsText())
       .click();
-
-    //cy.wait(2000);
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-kandydatow-o-nas/");
-
+    cy.url().should("eq", ForCandidatesPage.aboutUsUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
 
     //3
     cy.wait(2000);
-    cy.get(
-      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-27"]'
-    )
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow-kariera/"]'
-      )
+    ForCandidatesPage.carrierFromFooterAll()
       .last()
-      .should("contain", "Kariera")
+      .should("contain", ForCandidatesPage.carrierText())
       .click();
 
-    cy.url().should(
-      "eq",
-      "https://alan-systems.com/pl/dla-kandydatow-kariera/"
-    );
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
-
+    cy.url().should("eq", ForCandidatesPage.carrierUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
+
     //4
-
     cy.wait(2000);
-    cy.get(
-      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-26"]'
-    )
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow-kontakt/"]'
-      )
+    ForCandidatesPage.contactFromFooterAll()
       .last()
-      .should("contain", "Kontakt")
+      .should("contain", ForCandidatesPage.contactText())
       .click();
-
-    cy.url().should(
-      "eq",
-      "https://alan-systems.com/pl/dla-kandydatow-kontakt/"
-    );
-
+    cy.url().should("eq", ForCandidatesPage.contactUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
 
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
     //5
-
     cy.wait(2000);
-    cy.get(
-      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-29"]'
-    )
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-biznesu/"]'
-      )
+    ForCandidatesPage.solutionsForFooterAll()
       .last()
-      .should("contain", "Rozwiązania do biznesu")
+      .should("contain", ForCandidatesPage.solutionsForBusinessText())
       .click();
-
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu/");
-
+    cy.url().should("eq", ForCandidatesPage.solutionsForBusinessUrl());
     ForCandidatesPage.visitForCandidatesAndPrintToConsoleLog();
-
-    // cy.visit("/dla-kandydatow/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-kandydatow/")
-    // );
   });
 });
