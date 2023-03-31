@@ -4,347 +4,186 @@ import ForBusinessPage from "../support/page-object/ForBusinessPage";
 
 describe("E2E - For Business Page", () => {
   it("Should open 'For Business page' and check pusbutton on page", () => {
-    // 1
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
-
     ForBusinessPage.visitOnMainPage();
 
     cy.wait(2000);
-    //0
-    cy.get("#menu-item-290")
-      .children(
-        'a[href="https://alan-systems.com/pl/dla-biznesu/"][class="nav-link active"]'
-      )
-      .should("contain", "Dla biznesu")
-      .click({
-        force: true,
-      });
-
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu/");
-
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
-
-    ForBusinessPage.visitOnMainPage();
 
     //1
-    cy.get("#menu-item-286")
-      .children(
-        'a[href="https://alan-systems.com/pl/dla-biznesu-o-nas/"][class="nav-link "]'
-      )
-      .should("contain", "O nas")
+    ForBusinessPage.forBusinessFromMenuAll()
+      .should("contain", ForBusinessPage.forBusinessText())
+      .click({
+        force: true,
+      });
+    cy.url().should("eq", ForBusinessPage.forBusinessUrl());
+    ForBusinessPage.visitOnMainPage();
+
+    //2
+    ForBusinessPage.aboutUsFromMenuAll()
+      .should("contain", ForBusinessPage.aboutUsFromMenuText())
       .click({
         force: true,
       });
 
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-o-nas/");
-
+    cy.url().should("eq", ForBusinessPage.aboutUsFromMenuUrl());
     ForBusinessPage.visitOnMainPage();
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
-
-    // 2
-    cy.get("#menu-item-331")
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-biznesu-oferta/"]'
-      )
-      //.first()
-      .should("contain", "Oferta")
-      .click();
-
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-oferta/");
-
-    ForBusinessPage.visitOnMainPage();
-
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
 
     //3
-    cy.get("#menu-item-285")
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-biznesu-kontakt/"]'
-      )
-      //.first()
-      .should("contain", "Kontakt")
+    ForBusinessPage.offerFromMenuAll()
+      .should("contain", ForBusinessPage.offerFromMenuText())
       .click();
 
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-kontakt/");
-
+    cy.url().should("eq", ForBusinessPage.offerFromMenuUrl());
     ForBusinessPage.visitOnMainPage();
-
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
 
     //4
-    cy.get("#menu-item-287")
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow/"]'
-      )
-      // .first()
-      .should("contain", "Kariera w ALAN Systems")
+    ForBusinessPage.contactFromMenuAll()
+      .should("contain", ForBusinessPage.contactFromMenuText())
       .click();
 
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-kandydatow/");
-
+    cy.url().should("eq", ForBusinessPage.contactFromMenuUrl());
     ForBusinessPage.visitOnMainPage();
 
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
-
     //5
-    cy.get("h3")
-      .children(
-        'a[class="btn secondary text-uppercase big"][href="https://alan-systems.com/dla-biznesu-oferta/"]'
-      )
-      .should("contain", "Poznaj ofertę ")
+    ForBusinessPage.carrierFromMenuAll()
+      .should("contain", ForBusinessPage.carrierFromMenuText())
+      .click();
+
+    cy.url().should("eq", ForBusinessPage.carrierFromMenuUrl());
+    ForBusinessPage.visitOnMainPage();
+
+    //6
+    ForBusinessPage.knowOfferAll()
+      .should("contain", ForBusinessPage.knowOfferText())
       .click({
         force: true,
       });
 
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-oferta/");
-
+    cy.url().should("eq", ForBusinessPage.knowOfferUrl());
     ForBusinessPage.visitOnMainPage();
 
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
-
-    //6
-    cy.get(
-      'a[class="btn primary text-uppercase my-4"][href="/dla-biznesu-o-nas/"]'
-    )
-      .should("contain", "Czytaj dalej")
-      .click();
-
-    //cy.wait(2000);
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-o-nas/");
-
-    ForBusinessPage.visitOnMainPage();
-
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
     //7
-
-    cy.wait(2000);
-    cy.get("#menu-item-290")
-      .children(
-        'a[href="https://alan-systems.com/pl/dla-biznesu/"][class="nav-link active"]'
-      )
-      .should("contain", "Dla biznesu")
+    ForBusinessPage.getReadOn()
+      .should("contain", ForBusinessPage.readOnText())
       .click();
 
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu/");
-
+    cy.url().should("eq", ForBusinessPage.readOnUrl());
     ForBusinessPage.visitOnMainPage();
-
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
-
-    //menu-item-290
-    //<a href="https://alan-systems.com/pl/dla-biznesu/" class="nav-link active">Dla biznesu</a>
   });
 
   it("check menu (footer)", () => {
     //1
     cy.wait(2000);
-    cy.get(
-      'a[class="nav-link active"][href="https://alan-systems.com/pl/dla-biznesu/"]'
-    )
+    ForBusinessPage.getForBusinessFooter()
       .last()
-      .should("contain", "Dla biznesu")
+      .should("contain", ForBusinessPage.forBusinessFooterText())
       .click();
-
-    //cy.wait(2000);
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu/");
+    cy.url().should("eq", ForBusinessPage.forBusinessFooterUrl());
 
     ForBusinessPage.visitOnMainPage();
-
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
 
     //2
-
     cy.wait(2000);
-    cy.get(
-      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-286"]'
-    )
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-biznesu-o-nas/"]'
-      )
+    ForBusinessPage.aboutUsFooterAll()
       .last()
-      .should("contain", "O nas")
+      .should("contain", ForBusinessPage.aboutUsFooterText())
       .click();
-
-    //cy.wait(2000);
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-o-nas/");
-
+    cy.url().should("eq", ForBusinessPage.aboutUsFooterUrl());
     ForBusinessPage.visitOnMainPage();
-
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
 
     //3
     cy.wait(2000);
-    cy.get(
-      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-331"]'
-    )
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-biznesu-oferta/"]'
-      )
+    ForBusinessPage.offerFooterAll()
       .last()
-      .should("contain", "Oferta")
+      .should("contain", ForBusinessPage.offerFooterText())
       .click();
-
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-oferta/");
-
+    cy.url().should("eq", ForBusinessPage.offerFooterUrl());
     ForBusinessPage.visitOnMainPage();
 
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
     //4
-
     cy.wait(2000);
-    cy.get(
-      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-285"]'
-    )
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-biznesu-kontakt/"]'
-      )
+    ForBusinessPage.contactFooterAll()
       .last()
-      .should("contain", "Kontakt")
+      .should("contain", ForBusinessPage.contactFooterText())
       .click();
-
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-biznesu-kontakt/");
-
+    cy.url().should("eq", ForBusinessPage.contactFooterUrl());
     ForBusinessPage.visitOnMainPage();
 
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
     //5
-
     cy.wait(2000);
-    cy.get(
-      'li[class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-287"]'
-    )
-      .children(
-        'a[class="nav-link "][href="https://alan-systems.com/pl/dla-kandydatow/"]'
-      )
+    ForBusinessPage.carrierFooterAll()
       .last()
-      .should("contain", "Kariera w ALAN Systems")
+      .should("contain", ForBusinessPage.carrierFooterText())
       .click();
-
-    cy.url().should("eq", "https://alan-systems.com/pl/dla-kandydatow/");
-
+    cy.url().should("eq", ForBusinessPage.carrierFooterUrl());
     ForBusinessPage.visitOnMainPage();
-
-    // cy.visit("/dla-biznesu/").then(() =>
-    //   console.log("Visit on https://alan-systems.com/pl/dla-biznesu/")
-    // );
   });
 
   it("check scrolling list", () => {
     ForBusinessPage.visitOnMainPage();
 
     for (let i = 0; i < 5; i++) {
-      //cy.wait("1000");
       switch (i) {
         case 0: {
           cy.wait(1000);
-          cy.get('div[class="col-12"]')
-            .find('div[class="img"]')
-            .children(
-              'img[src="https://alan-systems.com/shared/uploads/clients/tele2.png"]'
-            )
-            .click({
-              force: true,
-            });
+          ForBusinessPage.colOptionAndImgAllZero().click({
+            force: true,
+          });
 
-          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
-            .find('div[class="mt-3 small"]')
-            .should(
-              "contain",
-              "Hans Gruber, Head of Application Management, Tele2,"
-            );
+          ForBusinessPage.colTOptionTwelveAll().should(
+            "contain",
+            ForBusinessPage.colTOptionTwelveOneText()
+          );
           break;
         }
         case 1: {
           cy.wait(1000);
-          cy.get('div[class="col-12"]')
-            .find('div[class="img"]')
-            .children(
-              'img[src="https://alan-systems.com/shared/uploads/clients/gvc-logo.png"]'
-            )
-            .click({
-              force: true,
-            });
+          ForBusinessPage.colOptionAndImgAllOne().click({
+            force: true,
+          });
 
           cy.wait(1000);
-          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
-            .find('div[class="mt-3 small"]')
-            .should("contain", "Robert Wilfingseder, Procurement Manager");
+          ForBusinessPage.colTOptionTwelveAll().should(
+            "contain",
+            ForBusinessPage.colTOptionTwelveTwoText()
+          );
           break;
         }
         case 2: {
           cy.wait(1000);
-          cy.get('div[class="col-12"]')
-            .find('div[class="img"]')
-            .children(
-              'img[src="https://alan-systems.com/shared/uploads/clients/cbg-white.png"]'
-            )
-            .click({
-              force: true,
-            });
+          ForBusinessPage.colOptionAndImgAllTwo().click({
+            force: true,
+          });
 
-          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
-            .find('div[class="mt-3 small"]')
-            .should("contain", "Urszula Lorente, Pełnomocnik Spółki");
+          ForBusinessPage.colTOptionTwelveAll().should(
+            "contain",
+            ForBusinessPage.colTOptionTwelveThreeText()
+          );
 
           break;
         }
         case 3: {
           cy.wait(1000);
-          cy.get('div[class="col-12"]')
-            .find('div[class="img"]')
-            .children(
-              'img[src="https://alan-systems.com/shared/uploads/clients/i2.png"]'
-            )
-            .click({
-              force: true,
-            });
+          ForBusinessPage.colOptionAndImgAllThree().click({
+            force: true,
+          });
 
-          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
-            .find('div[class="mt-3 small"]')
-            .should("contain", "Natalia Szwed, v-ce Dyrektor");
+          ForBusinessPage.colTOptionTwelveAll().should(
+            "contain",
+            ForBusinessPage.colTOptionTwelveFourText()
+          );
 
           break;
         }
         case 4: {
           cy.wait(1000);
-          cy.get('div[class="col-12"]')
-            .find('div[class="img"]')
-            .children(
-              'img[src="https://alan-systems.com/shared/uploads/clients/gfk-color.png"]'
-            )
-            .click({
-              force: true,
-            });
+          ForBusinessPage.colOptionAndImgAllFour().click({
+            force: true,
+          });
 
-          cy.get('div[class="col-12 col-lg-10 col-xl-8 text"]')
-            .find('div[class="mt-3 small"]')
-            .should("contain", "Monika Macura, Senior HR Specialist");
+          ForBusinessPage.colTOptionTwelveAll().should(
+            "contain",
+            ForBusinessPage.colTOptionTwelveFiveText()
+          );
           break;
         }
       }
